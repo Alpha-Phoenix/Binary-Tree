@@ -9,7 +9,6 @@ void clearTree(Node* root) {
     clearTree(root->left);
     clearTree(root->right);
     free(root);
-    root = null;
 }
 
 void insert(Cell cell, Node **root) {
@@ -44,17 +43,17 @@ BinaryTree* BinaryTree_Create() {
     return tree;
 }
 
-void BinaryTree_Destroy(BinaryTree* tree) {
+void BinaryTree_Destroy(BinaryTree** tree) {
     BinaryTree_Clear(tree);
-    free(tree);
+    free(*tree);
+    *tree = null;
 }
 
-void BinaryTree_Clear(BinaryTree* tree) {
-    clearTree(tree->root);
-    tree->root = null;
+void BinaryTree_Clear(BinaryTree** tree) {
+    clearTree((*tree)->root);
+    (*tree)->root = null;
 }
 
 void BinaryTree_Insert(BinaryTree *tree, Cell cell) {
     insert(cell, &tree->root);
 }
-
