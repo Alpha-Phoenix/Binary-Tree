@@ -20,8 +20,8 @@ typedef struct {
 } BinaryTree;
 
 BinaryTree* BinaryTree_Create();
-void BinaryTree_Destroy(BinaryTree* tree);
-void BinaryTree_Clear(BinaryTree* tree);
+void BinaryTree_Destroy(BinaryTree **tree);
+void BinaryTree_Clear(BinaryTree **tree);
 void BinaryTree_Insert(BinaryTree *tree, Cell cell);
 
 #endif // BINARY_TREE
