@@ -57,3 +57,4 @@ void BinaryTree_Clear(BinaryTree* tree) {
 void BinaryTree_Insert(BinaryTree *tree, Cell cell) {
     insert(cell, &tree->root);
 }
+
